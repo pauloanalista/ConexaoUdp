@@ -152,9 +152,9 @@ namespace Qsti.ProData.Gateway
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(814, 498);
+            this.btnLimpar.Location = new System.Drawing.Point(782, 498);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(84, 34);
+            this.btnLimpar.Size = new System.Drawing.Size(116, 34);
             this.btnLimpar.TabIndex = 8;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.UseVisualStyleBackColor = true;
