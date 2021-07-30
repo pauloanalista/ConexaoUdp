@@ -29,6 +29,7 @@ namespace Qsti.ProData.Gateway
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGateway));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@ namespace Qsti.ProData.Gateway
             this.txtMensagem = new System.Windows.Forms.TextBox();
             this.btnParar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -158,6 +160,14 @@ namespace Qsti.ProData.Gateway
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.BalloonTipText = "Qsti.ProData.Gateway";
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "Qsti.ProData.Gateway";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
             // frmGateway
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -176,6 +186,7 @@ namespace Qsti.ProData.Gateway
             this.Name = "frmGateway";
             this.Text = "Qsti.ProData.Gateway";
             this.Load += new System.EventHandler(this.frmGateway_Load);
+            this.Resize += new System.EventHandler(this.frmGateway_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -197,6 +208,7 @@ namespace Qsti.ProData.Gateway
         private System.Windows.Forms.TextBox txtMensagem;
         private System.Windows.Forms.Button btnParar;
         private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
 

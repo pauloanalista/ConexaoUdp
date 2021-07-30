@@ -36,6 +36,8 @@ namespace Qsti.ProData.Gateway
             lblOuvirPorta.Text = ouvirPortas;
             lblIp.Text = _ip;
 
+            notifyIcon.BalloonTipTitle = "Qsti.ProData.Gateway";
+            notifyIcon.BalloonTipText = ouvirPortas;
         }
 
 
@@ -130,6 +132,24 @@ namespace Qsti.ProData.Gateway
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             SetTextBox(txtMensagem, string.Empty);
+        }
+
+        private void frmGateway_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                Hide();
+                notifyIcon.Visible = true;
+
+                notifyIcon.ShowBalloonTip(1000);
+            }
+        }
+
+        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            this.WindowState = FormWindowState.Normal;
+            notifyIcon.Visible = false;
         }
     }
 }
